@@ -6,14 +6,7 @@ resource "helm_release" "gatekeeper" {
   name       = "gatekeeper"
   namespace  = "gatekeeper-system"
   repository = var.chart_repository
-
-  dynamic "set" {
-    for_each = local.helm_values
-    content {
-      name  = set.key
-      value = set.value
-    }
-  }
+  set        = local.helm_values
 
   values = [
     file("${path.module}/helm/gatekeeper.yml")

@@ -2,7 +2,7 @@
 # https://www.terraform.io/docs/language/values/locals.html
 
 locals {
-  helm_values = {
+  helm_values_map = {
     "audit.resources.limits.cpu"                  = var.audit_resources_limits_cpu
     "audit.resources.limits.memory"               = var.audit_resources_limits_memory
     "audit.resources.requests.cpu"                = var.audit_resources_requests_cpu
@@ -21,4 +21,11 @@ locals {
     "preInstall.crdRepository.image.tag"          = var.gatekeeper_version
     "replicas"                                    = var.replicas
   }
+
+  helm_values = [
+    for k, v in local.helm_values_map : {
+      name  = k
+      value = v
+    }
+  ]
 }
