@@ -11,24 +11,44 @@ variable "audit_resources_limits_cpu" {
   description = "The CPU limit for the audit container"
   type        = string
   default     = "40m"
+
+  validation {
+    condition     = can(regex("^([0-9]*\\.?[0-9]+)(m)?$", var.audit_resources_limits_cpu))
+    error_message = "The audit_resources_limits_cpu value must be a valid Kubernetes CPU quantity (e.g., '40m', '0.1', '1')."
+  }
 }
 
 variable "audit_resources_limits_memory" {
   description = "The memory limit for the audit container"
   type        = string
   default     = "128Mi"
+
+  validation {
+    condition     = can(regex("^([0-9]*\\.?[0-9]+)(Ei|Pi|Ti|Gi|Mi|Ki|E|P|T|G|M|K)?$", var.audit_resources_limits_memory))
+    error_message = "The audit_resources_limits_memory value must be a valid Kubernetes memory quantity (e.g., '128Mi', '1Gi', '512M')."
+  }
 }
 
 variable "audit_resources_requests_cpu" {
   description = "The CPU request for the audit container"
   type        = string
   default     = "10m"
+
+  validation {
+    condition     = can(regex("^([0-9]*\\.?[0-9]+)(m)?$", var.audit_resources_requests_cpu))
+    error_message = "The audit_resources_requests_cpu value must be a valid Kubernetes CPU quantity (e.g., '10m', '0.1', '1')."
+  }
 }
 
 variable "audit_resources_requests_memory" {
   description = "The memory request for the audit container"
   type        = string
   default     = "32Mi"
+
+  validation {
+    condition     = can(regex("^([0-9]*\\.?[0-9]+)(Ei|Pi|Ti|Gi|Mi|Ki|E|P|T|G|M|K)?$", var.audit_resources_requests_memory))
+    error_message = "The audit_resources_requests_memory value must be a valid Kubernetes memory quantity (e.g., '32Mi', '1Gi', '256M')."
+  }
 }
 
 variable "chart_repository" {
