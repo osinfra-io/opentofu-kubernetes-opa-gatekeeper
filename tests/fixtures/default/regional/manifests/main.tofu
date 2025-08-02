@@ -1,5 +1,5 @@
 # Required Providers
-# https://developer.hashicorp.com/terraform/language/providers/requirements
+# https://opentofu.org/docs/language/providers/requirements
 
 terraform {
   required_providers {
@@ -16,7 +16,5 @@ terraform {
 }
 
 module "test" {
-  source = "../../../../regional"
-
-  artifact_registry = "mock-docker.pkg.dev/mock-project/mock-virtual"
+  source = "../../../../../regional/manifests"
 }
