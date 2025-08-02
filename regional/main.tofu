@@ -1,5 +1,5 @@
 # Helm Release
-# https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release
+# https://search.opentofu.org/provider/hashicorp/helm/latest/docs/resources/release
 
 resource "helm_release" "gatekeeper" {
   chart      = "gatekeeper"
@@ -20,7 +20,7 @@ resource "helm_release" "gatekeeper" {
 }
 
 # Kubernetes Manifest Resource
-# https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest
+# https://search.opentofu.org/provider/hashicorp/kubernetes/latest/docs/resources/manifest
 
 resource "kubernetes_manifest" "opa_gatekeeper_ca_certificate" {
   manifest = {
