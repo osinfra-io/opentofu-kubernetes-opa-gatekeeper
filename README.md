@@ -1,6 +1,6 @@
 # <img align="left" width="45" height="45" src="https://github.com/user-attachments/assets/9e7982fb-5f76-4e95-a4f2-f6bf4b458693"> Kubernetes - Open Policy Agent Gatekeeper OpenTofu Module
 
-[![OpenTofu Tests](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-kubernetes-opa-gatekeeper/test.yml?branch=main&style=for-the-badge&logo=opentofu&label=OpenTofu%20Tests)](https://github.com/osinfra-io/opentofu-kubernetes-opa-gatekeeper/actions/workflows/test.yml) [![Dependabot](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-kubernetes-opa-gatekeeper/dependabot.yml?branch=main&style=for-the-badge&logo=github&label=Dependabot)](https://github.com/osinfra-io/opentofu-kubernetes-opa-gatekeeper/actions/workflows/dependabot.yml)
+[![OpenTofu Tests](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-kubernetes-opa-gatekeeper/test.yml?style=for-the-badge&logo=opentofu&label=OpenTofu%20Tests)](https://github.com/osinfra-io/opentofu-kubernetes-opa-gatekeeper/actions/workflows/test.yml) [![Dependabot](https://img.shields.io/github/actions/workflow/status/osinfra-io/opentofu-kubernetes-opa-gatekeeper/dependabot.yml?style=for-the-badge&logo=github&label=Dependabot)](https://github.com/osinfra-io/opentofu-kubernetes-opa-gatekeeper/actions/workflows/dependabot.yml)
 
 ## Repository Description
 
