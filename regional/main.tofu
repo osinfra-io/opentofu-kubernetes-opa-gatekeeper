@@ -2,6 +2,10 @@
 # https://search.opentofu.org/provider/hashicorp/helm/latest/docs/resources/release
 
 resource "helm_release" "gatekeeper" {
+  depends_on = [
+    kubernetes_manifest.opa_gatekeeper_selfsigned_issuer
+  ]
+
   chart      = "gatekeeper"
   name       = "gatekeeper"
   namespace  = "gatekeeper-system"
@@ -13,10 +17,6 @@ resource "helm_release" "gatekeeper" {
   ]
 
   version = var.gatekeeper_version
-
-  depends_on = [
-    kubernetes_manifest.opa_gatekeeper_selfsigned_issuer
-  ]
 }
 
 # Kubernetes Manifest Resource
